@@ -1,0 +1,831 @@
+/* ///////////////////// */
+/* 🎞️🎞️🎞️ FONTFACES 🎞️🎞️🎞️ */
+/* ///////////////////// */
+
+@font-face {
+    font-family: "Clay";
+    src: url(../fonts/CLAY.otf);
+}
+/* SOURCE: https://type-department.com/products/clay */
+
+@font-face {
+    font-family: "ES Replan";
+    src: url(../fonts/ESReplanVariform-Regular1TRIAL.otf);
+}
+/* SOURCE: https://extraset.ch/typefaces/es-replan-variform/ */
+
+@font-face {
+    font-family: "Phosphene";
+    src: url(../fonts/PhospheneFont-Regular.ttf);
+}
+/* SOURCE: https://uncut.wtf/display/phosphene/ */
+
+/* ////////////////////// */
+/* 🍙🍙🍙 CSS REMEDY 🍙🍙🍙 */
+/* ////////////////////// */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    /* No margin & padding */
+    --no-margin: 0;
+
+    /* Colours */
+    --black: #1f1f1f;
+    --white: #ffffff;
+    --creme: seashell;
+
+    --dark-creme-border: rgb(203, 184, 171);
+    --dark-creme-opacity: rgba(203, 184, 171, 0.339);
+
+    /* Fonts */
+    --clay: "Clay", Arial, Helvetica, sans-serif;
+    --pixel: "Phosphene", Arial, Helvetica, sans-serif;
+    --regular: "ES Replan", Arial, Helvetica, sans-serif;
+
+    /* Font sizes mobile/small */
+    --h1-small: 5rem;
+    --h2-small: 2.5rem;
+    --h3-small: 1rem;
+    --p-small: 0.8rem;
+
+    --letter-spacing: 0.04rem;
+
+    /* Font sizes normal/desktop*/
+    --h1: 8rem;
+    --h2: 4rem;
+    --h3: 1.5rem;
+    --p: 1rem;
+
+    --width-extra-extra-small: 35%;
+    --width-extra-small: 80%;
+    --width-small: 25%;
+    --width-medium: 30%;
+    --width-large: 75%;
+    --width-extra-large: 160%;
+
+    /* Title outline */
+    --outline: 0.8rem;
+    --outline-small: 0.5rem;
+
+    /* Bag width */
+    --bag-width: 18vw;
+
+    /* File width */
+    --file-width: 7rem;
+
+    /* Shadow */
+    /* SOURCE: https://getcssscan.com/css-box-shadow-examples */
+    --shadow-colour: 25deg 30% 56%;
+    --shadow-elevation-medium:
+    -0.4px 0.4px 0.7px hsl(var(--shadow-colour) / 0.44),
+    -1.5px 1.5px 2.5px -0.7px hsl(var(--shadow-colour) / 0.47),
+    -3.7px 3.8px 6.2px -1.5px hsl(var(--shadow-colour) / 0.49),
+    -8.9px 9px 14.8px -2.2px hsl(var(--shadow-colour) / 0.52);
+}
+
+/* /////////////////////////// */
+/* 🪐🪐🪐 TEXT FORMATTING 🪐🪐🪐 */
+/* /////////////////////////// */
+
+body {
+    font-family: var(--regular);
+    letter-spacing: var(--letter-spacing);
+    color: var(--black);
+    background-color: var(--white);
+
+    background-color: var(--creme);
+    overflow: hidden;
+    height: 100vh;
+}
+
+h1 {
+    font-family: var(--clay);
+    color: var(--black);
+    font-size: var(--h1);
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--pixel);
+    color: var(--black);
+    font-size: var(--h2);
+    text-align: center;
+}
+
+p {
+    font-family: var(--regular);
+    font-size: var(--p);
+    text-align: center;
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* 🪐 TEXT FORMATTING RESPONSIVE 🪐 */
+
+/* SOURCE: https://www.browserstack.com/guide/responsive-design-breakpoints */
+/* SOURCE: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/ */
+
+/* (extra)small mobile 320px - 600px */
+@media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .titleContainer {
+        transform: translateY(-45%);
+    }
+
+}
+
+/* ////////////////// */
+/* 🔎🔎🔎 HEADER 🔎🔎🔎 */
+/* ////////////////// */
+
+header {
+    position: absolute;
+}
+
+/* ////////////////////// */
+/* 🤠🤠🤠 NAVIGATION 🤠🤠🤠 */
+/* ////////////////////// */
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 0.8rem 1rem;
+}
+
+nav ul li {
+    height: fit-content;
+    width: fit-content;
+}
+
+nav ul li:nth-of-type(2) {
+    height: 2rem;
+}
+
+.iconLink {
+    /* SOURCE: https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow */
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem rgb(155, 131, 112));
+    font-size: 1.5rem;
+}
+
+.githubLink {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-flow: row-reverse nowrap;
+}
+
+.githubLink img {
+    height: 2rem;
+    border-radius: 50%;
+    /* SOURCE: https://app.uxcel.com/courses/css-for-designers/css-border--outline-801 */
+    outline: 0.3rem #fff5ee solid;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+/* Nav responsive */
+/* (extra)small mobile 320px - 600px */
+@media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .titleContainer {
+        transform: translateY(-45%);
+    }
+
+}
+
+/* ///////////////// */
+/* 🌶️🌶️🌶️ TITLE 🌶️🌶️🌶️ */
+/* ///////////////// */
+
+.titleContainer {
+    /* 'New' way of positioning with grid(from Sanne) */
+    display: grid;
+    grid-area: 1 / 1;
+    width: fit-content;
+    justify-items: center;
+    align-items: start;
+    transform: translateY(-45%);
+}
+
+/* Used 'new' CSS selector */
+.titleContainer * {
+    grid-area: 1 / 1;
+    width: fit-content;
+    position: relative;
+}
+
+.titleContainer h2 {
+    z-index: 3;
+}
+
+.outline {
+    font-family: var(--pixel);
+    font-size: var(--h2);
+    -webkit-text-stroke: var(--outline) var(--creme);
+
+    /* position: relative; */
+    z-index: 1;
+}
+
+@media screen and (max-width: 769px) {
+
+    .outline {
+        font-size: var(--h2-small);
+        -webkit-text-stroke: var(--outline-small) var(--creme);
+    }
+
+}
+
+/* /////////////////////////// */
+/* 💥💥💥 ANIMATION SHAKE 💥💥💥 */
+/* /////////////////////////// */
+
+/* SOURCE: https://unused-css.com/blog/css-shake-animation/ */
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0deg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* //////////////////////////// */
+/* 🛒🛒🛒 WHAT'S IN MY BAG 🛒🛒🛒 */
+/* //////////////////////////// */
+
+section.lay-out{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    gap: 1rem;
+    padding: 2em 2em 2em 2em;
+}
+
+.bio {
+    width: 40vw;
+}
+
+.shake {
+    position: relative;
+}
+
+/* Hover uitzetten na animatie */
+.shake:hover {
+    animation: tilt-n-move-shaking 0.3s ease-in-out 4;
+}
+
+.bagContainer {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    transform-origin: 50% 40%;
+    z-index: 30;
+}
+
+/* 🫶🏼 HELP SANNE for animation & positioning */
+.stuff {
+    width: var(--bag-width);
+    height: fit-content;
+    position: absolute;
+    z-index: 1;
+    top: 35%;
+    display:grid;
+    justify-items: center;
+    align-items: end;
+}
+
+/* Width on li instead of on img, prevents individual sizing for each img */
+.stuff li {
+    grid-area:1/1;
+
+    display: grid;
+    width: fit-content;
+    justify-items: center;
+    align-items: start;
+    rotate: 180deg;
+    position: relative;
+}
+
+/* ///////////////////////////////////// */
+/* 🤎🤎🤎 ANIMATION FALL OUT OF BAG 🤎🤎🤎 */
+/* ///////////////////////////////////// */
+
+/* Tweede animatie met minder vh voor responsive */
+/* SOURCE: https://codepen.io/abbydebest/pen/wBvvwWr */
+/* SOURCE CSS TRICKS: https://css-tricks.com/almanac/properties/a/animation/ */
+@keyframes drop {
+    0% {
+        transform: translateY(-2.25vh);
+        animation-timing-function: ease-in; 
+    }
+    50% {
+        transform: translateY(-31vh);
+        animation-timing-function: ease-in; 
+    }
+    70% {
+        transform: translateY(-33vh);
+        animation-timing-function: ease-in; 
+    }
+    90% {
+        transform: translateY(-34vh);
+        animation-timing-function: ease-in; 
+    }
+    40%, 60%, 80%, 100% {
+        transform: translateY(-35vh);
+        animation-timing-function: ease-out; 
+    }
+  }
+
+/* //////////////////////////// */
+/* ✨✨✨ ANIMATION SHADOW ✨✨✨ */
+/* //////////////////////////// */
+
+/* SOURCE CHAT GPT: https://chatgpt.com/share/67ada4ef-2c00-8002-a0b7-03ef7fdfed6b */
+@keyframes shadowScale {
+    0% {
+        transform: translateY( calc(-50%) );
+        animation-timing-function: ease-in; 
+    }
+    50% {
+        transform: translateY( calc(-50% - 4vh) ) scale(.92);
+        animation-timing-function: ease-in; 
+    }
+    70% {
+        transform: translateY( calc(-50% - 2vh) ) scale(.96);
+        animation-timing-function: ease-in; 
+    }
+    90% {
+        transform: translateY( calc(-50% - 1vh) ) scale(.98);
+        animation-timing-function: ease-in; 
+    }
+    40%, 60%, 80%, 100% {
+        transform: translateY(-50%);
+        animation-timing-function: ease-out; 
+    }
+}
+
+/* Animation on li instead of on img to better position with shadow */
+.stuff:has(:not(.hidden)) li {
+    animation: drop 1.5s forwards 0.5s;
+}
+
+.stuff:has(:not(.hidden)) li.macbook-wrapper {
+    animation-delay: 0.5s;
+}
+
+.stuff:has(:not(.hidden)) li.nesso-lamp-css {
+    animation-delay: 1s;
+}
+
+.stuff:has(:not(.hidden)) li.notebook-api {
+    animation-delay: 1.5s;
+}
+
+.stuff:has(:not(.hidden)) li.discoball {
+    animation-delay: 2s;
+}
+
+.stuff:has(:not(.hidden)) li.sunglasses {
+    animation-delay: 2.5s;
+}
+
+.stuff:has(:not(.hidden)) li.airpod-case {
+    animation-delay: 3s;
+}
+
+.stuff li * {
+    grid-area:1/1;
+}
+
+.stuff:has(li) {
+    pointer-events: auto;
+}
+
+.shadow {
+    position: relative;
+    z-index: -1;
+    width: 110%;
+    height: 10%;
+    top: .8rem;
+
+    background-color: rgba(56, 56, 56, 0.3);
+    filter: blur(0.2rem);
+
+    border-radius: 50%;
+    animation: shadowScale 1.5s forwards;
+}
+
+.shadow-lamp {
+    left: 4rem;
+}
+
+.shadow-notebook {
+    right: 6rem;
+}
+
+.shadow-discoball {
+    right: 5rem;
+}
+
+.shadow-sunglasses {
+    left: 5rem;
+}
+
+.share-airpods {
+    left: 2rem;
+}
+
+/* Charms nog laten bewegen */
+.charm1 {
+    position: absolute;
+    top: 32%;
+    left: 23%;
+    rotate: 40deg;
+    z-index: 99;
+}
+
+.charm1 img {
+    transform-origin: 60% 2%;
+    rotate: calc(var(--angle) * -1deg);
+}
+
+.charm2 {
+    position: absolute;
+    top: 39%;
+    left: 30%;
+    rotate: -15deg;
+    z-index: 89;
+}
+
+.charm2 img {
+    transform-origin: 30% 2%;
+    rotate: calc(var(--angle) * -1deg);
+}
+
+img.bag {
+    width: var(--bag-width);
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+img.miniBag {
+    width: 6vw;
+    position: absolute;
+    left: 20%;
+}
+
+img.bagCharm {
+    width: 4vw;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ///////////////////// */
+/* 🍘🍘🍘 BAG ITEMS 🍘🍘🍘 */
+/* ///////////////////// */
+
+form {
+    width: auto;
+    height: auto;
+}
+
+input[type="button"] {
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+
+    &:hover {
+        border: 0.1rem solid var(--dark-creme-border);
+        background-color: var(--dark-creme-opacity);
+    }
+
+}
+
+label.item-text {
+    width: 55vw;
+    opacity: 0;
+    position: absolute;
+    transform: rotate(180deg);
+    top: -3.5rem;
+    text-align: center;
+}
+
+.macbook-wrapper,
+.nesso-lamp-css,
+.notebook-api,
+.discoball,
+.sunglasses,
+.airpod-case {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+    &:hover {
+        z-index: 100;
+        position: relative;
+    }
+}
+
+#macbook {
+    --mac-book-width: 13.5rem;
+    --mac-book-height: calc(var(--mac-book-width) * 0.7);
+
+    background-image: url('../images/MacBook Pro = Silver.png');
+    background-size: var(--mac-book-width) var(--mac-book-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--mac-book-width) + .8rem);
+    height: calc(var(--mac-book-height) + 1.5rem);
+}
+
+#lamp {
+    --lamp-width: 10rem;
+    --lamp-height: calc(var(--lamp-width) * 0.75);
+
+    background-image: url('../images/2d4c5de3-b124-4268-8572-db443913caf7.png');
+    background-size: var(--lamp-width) var(--lamp-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: rotate(20deg);
+    width: calc(var(--lamp-width) + .8rem);
+    height: calc(var(--lamp-height) + 1.5rem);
+    position: relative;
+    left: 4rem;
+}
+
+#notebook {
+    --notebook-width: 5rem;
+    --notebook-height: calc(var(--notebook-width) * 1.35);
+
+    background-image: url('../images/Leuchtturm1917-A5-Notebook-SpiceBrown-OW_1500x_95559c58-51e1-4070-b3d4-3a0dacb9e935_1600x Background Removed.png');
+    background-size: var(--notebook-width) var(--notebook-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--notebook-width) + .8rem);
+    height: calc(var(--notebook-height) + 1.5rem);
+    rotate: -30deg;
+    position: relative;
+    right: 6rem;
+}
+
+#discoball {
+    --disco-ball-width: 4.5rem;
+
+    background-image: url('../images/round pfp 🪩 Background Removed.png');
+    background-size: var(--disco-ball-width) var(--disco-ball-width);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--disco-ball-width) + .8rem);
+    height: calc(var(--disco-ball-width) + 1.5rem);
+    position: relative;
+    right: 5rem;
+}
+
+#sunglasses {
+    --sunglasses-width: 5.5rem;
+    --sunglasses-height: calc(var(--sunglasses-width) * 0.35);
+
+    background-image: url('../images/Ganni x Ace and Tate Background Removed.png');
+    background-size: var(--sunglasses-width) var(--sunglasses-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--sunglasses-width) + .8rem);
+    height: calc(var(--sunglasses-height) + 1.5rem);
+    left: 5rem;
+}
+
+#airpod-case {
+    --airpod-case-width: 2.5rem;
+    --airpod-case-height: calc(var(--airpod-case-width) * 0.75);
+
+    background-image: url('../images/losseairpodlaadcasebestellen.png');
+    background-size: var(--airpod-case-width) var(--airpod-case-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--airpod-case-width) + .8rem);
+    height: calc(var(--airpod-case-height) + 1.5rem);
+}
+
+.macbook-wrapper:hover label[for="macbook"],
+.nesso-lamp-css:hover label[for="lamp"],
+.notebook-api:hover label[for="notebook"],
+.discoball:hover label[for="discoball"],
+.sunglasses:hover label[for="sunglasses"],
+.airpod-case:hover label[for="airpod-case"] {
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* //////////////////////////////// */
+/* 💻💻💻 MACBOOK WEEKLY NERDS 💻💻💻 */
+/* //////////////////////////////// */
+
+:popover-open {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    justify-self: center;
+    align-self: center;
+    width: 80vw;
+    height: 80vh;
+    background-color: var(--creme);
+    border: none;
+    position: relative;
+    overflow: scroll !important;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+:popover-open p {
+    text-align: left;
+}
+
+.weekly-nerds-files {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    height: auto;
+    gap: 2rem;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: var(--file-width);
+    height: fit-content;
+}
+
+.file input {
+    --file-height: 6rem;
+
+    background-size: var(--file-width) var(--file-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--file-width) + .8rem);
+    height: calc(var(--file-height) + .5rem);
+}
+
+.file-name {
+    text-align: center;
+}
+
+#weekly-nerd1-file {
+    background-image: url('../images/folder-1-power.svg');
+}
+
+#weekly-nerd2-file {
+    background-image: url('../images/folder-2-heart-brown.svg');
+}
+
+#weekly-nerd3-file {
+    background-image: url('../images/folder-3-gsap.svg');
+}
+
+#weekly-nerd4-file {
+    background-image: url('../images/folder-4-wrapper.svg');
+}
+
+#weekly-nerd5-file {
+    background-image: url('../images/folder-5-impdec.svg');
+}
+
+#weekly-nerd6-file {
+    background-image: url('../images/folder-6-animation.svg');
+}
+
+#weekly-nerd7-file {
+    background-image: url('../images/folder-7-heart-fire.svg');
+}
+
+#weekly-nerd8-file {
+    background-image: url('../images/folder-8-bon.svg');
+}
+
+#weekly-nerd9-file {
+    background-image: url('../images/folder-9-acc.svg');
+}
+
+#weekly-nerd10-file {
+    background-image: url('../images/folder-10-io.svg');
+}
+
+#weekly-nerd11-file {
+    background-image: url('../images/folder-11-Q42.svg');
+}
+
+#weekly-nerd12-file {
+    background-image: url('../images/folder-12-wet.svg');
+}
+
+#weekly-nerd13-file {
+    background-image: url('../images/folder-13-pre-css.svg');
+}
+
+#weekly-nerd14-file {
+    background-image: url('../images/folder-14-css-day.svg');
+}
+
+#hackaton-file {
+    background-image: url('../images/folder-hack.svg');
+}
+
+#goals-file {
+    background-image: url('../images/folder-goals.svg');
+}
+
+#ref-1-file {
+    background-image: url('../images/folder-ref1.svg');
+}
+
+#ref-2-file {
+    background-image: url('../images/folder-ref2.svg');
+}
+
+.reflection {
+    list-style: inside !important;
+}
+
+/* ////////////////// */
+/* 🫒🫒🫒 FOOTER 🫒🫒🫒 */
+/* ////////////////// */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0.5rem;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    color: rgba(177, 158, 143, 0.486);
+    font-size: 0.8rem;
+}
+
+article.weeklyNerd1 {
+    width: 10rem;
+    height: auto;
+
+    & > input {
+        width: 2rem;
+        height: 2rem;
+    }
+}

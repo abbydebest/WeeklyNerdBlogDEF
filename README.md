@@ -1,1 +1,1 @@
-# WeeklyNerdBlogDEF
+# -Weekly-Nerd
