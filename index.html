@@ -44,7 +44,7 @@
             <!-- ///////////////// -->
             <!-- 🌶️🌶️🌶️ TITLE 🌶️🌶️🌶️ -->
             <!-- ///////////////// -->
-            <ul>
+            <ul class="title-wrapper">
                 <li>
                     <h1>Explore</h1>
                 </li>
@@ -134,112 +134,511 @@
                         <input popovertarget="content-nerd1-kilian" popovertargetaction="toggle" type="button" id="weekly-nerd1-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd1-file">Stop using JS for that - Kilian Valkhof</label>
                         <section id="content-nerd1-kilian" popover>
-                            <h3>Stop using JS for that - Kilian Valkhof</h3>
-                            <ul>
-                                <li>
-                                    🔗 Electron governance, application to build desktop apps with html, css and js
-                                </li>
-                                <li>
-                                    🔗 Polypane browser, browser created for developers with accessibility functions and</p>
-                                </li>
-                            </ul>
-                            <p>🪐 Moving features from JS to CSS & HTML</p>
-                            <p>The rule of least power = altijd de minst krachtige taal kiezen zodat browser alle slimme keuzes kan maken(voor betere experience, meer error controle)</p>
-                            <p>🤎 Custom switches</p>
-                            <p>Door Input in label weet browser dat label/text erbij hoort en maakt deze ook klikbaar</p>
-                            <h3>Reflectie</h3>
-                            <p>Over het algemeen vond ik Kilian's talk denk ik één van de nuttigste. Daarmee bedoel ik dat hij hele handige technieken heeft laten zien die ik tijdens de minor heb gebruikt en nog veel vaker ga toepassen in de toekomst. Daarbij heeft hij the rule of least power geïntroduceerd. Iets waar steeds meer rekening mee wordt gehouden en een codeertechniek die mij erg aanspreekt, gezien ik niet zo van JS houd. Dit is dan ook mijn 'nieuwe' uitgangspunt developer.</p>
+                            <div class="spacing">
+                                <h3>Stop using JS for that - Kilian Valkhof</h3>
+                                <h3>Reflectie</h3>
+                                <p>Over het algemeen vond ik Kilian's talk denk ik één van de nuttigste en vooral meest praktische. Daarmee bedoel ik dat hij hele handige technieken heeft laten zien die ik tijdens de minor heb gebruikt en nog veel vaker ga toepassen in de toekomst. Daarbij heeft hij the rule of least power geïntroduceerd. Iets waar steeds meer rekening mee wordt gehouden en een codeertechniek die mij erg aanspreekt, gezien ik niet zo van JS houd. Dit is dan ook mijn 'nieuwe' uitgangspunt als developer.</p>
+                                <p>Links & tools</p>
+                                <ul>
+                                    <li>
+                                        🔗 Electron governance, application to build desktop apps with html, css and js
+                                    </li>
+                                    <li>
+                                        🔗 Polypane browser, browser created for developers with accessibility functions and</p>
+                                    </li>
+                                </ul>
+                                <h3>🪐 Moving features from JS to CSS & HTML</h3>
+                                <p>The rule of least power = altijd de minst krachtige taal kiezen zodat browser alle slimme keuzes kan maken(voor betere experience, meer error controle)</p>
+                                <h3>🤎 Custom switches</h3>
+                                <pre class="code-example"><code>&lt;label&gt;
+    &lt;input type="checkbox" /&gt;
+    My awesome feature
+&lt;/label&gt;</code></pre>
+                                <p>Door Input in label weet browser dat label/text erbij hoort en maakt deze ook klikbaar</p>
+                                <p>Gebruik <code>appearance: none;</code>, <code>::before</code>, <code>:checked</code> en <code>::after</code> om de input te stylen</p>
+                                <h3>🫶🏼 Accessibility navigeren met toetsenbord</h3>
+                                <p>Gebruik <code>:focus-visible</code> op focus wanneer je focus wilt stylen (ipv <code>:focus { outline: none; }</code>)</p>
+                                <p class="italic">(Switch optie wordt mogelijk toegevoegd aan css, IOS Ladybird)</p>
+                                <h3>❤️‍🔥 Colorpicker</h3>
+                                <pre class="code-example"><code>&lt;input type = “color”&gt;</code></pre>
+                                <h3>🪩 In-page transitions</h3>
+                                <p>‘Link die gebruiker naar ander deel van website leidt anchor link?’ Voor een soepel transitie naar een ander deel van de website</p>
+                                <pre class="code-example"><code>html {
+    scroll-behaviour: smooth;
+}</code></pre>
+                                <p>Voor mensen die hier misselijk van worden (progressive enhancement = ervan uit gaan dat iemand geen motion wilt, tenzij anders aangegeven)</p>
+                                <pre class="code-example">@media (prefers-reduced-motion: no-preference) {
+    /* Code */
+}<code></code></pre>
+                                <p>Bepaalde margin toevoegen aan element alleen wanneer er gescrollt wordt met <code>scroll-margin-top</code></p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd2-roel" popovertargetaction="toggle" type="button" id="weekly-nerd2-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd2-file">Typography - Roel Nieskens</label>
                         <section id="content-nerd2-roel" popover>
-                            <h3>Typography - Roel Nieskens</h3>
+                            <div class="spacing">
+                                <h3>Reflectie</h3>
+                                <p>De presentatie van Roel vond ik echt super gaaf! Ondanks dat het technisch niet super diepgaand was, werd ik gewoon heel enthousiast van hoe hij zijn passie voor typografie combineerd met code. Als in eerste instantie designer, ben ik gek op typografie en om het zo in code toegepast te zien, heeft mijn interesse en inspiratie gegeven me hier meer in te verdiepen en vaker typografie creatief in mijn codeerprojecten toe te passen.</p>
+                                <h3>Typography - Roel Nieskens</h3>
+                                <p><code>font-variant-numeric: tabular-nums;</code></p>
+                                <h3>Animation with type</h3>
+                                <pre class="code-example"><code>div {
+    font-variant-settings:
+        “flot” 0,
+        “Pump” 0,
+        “bble” 0;
+    }
+
+    animation: floatie 2s;
+
+    /* OR */
+
+    animation: floatie both;
+    animation-timeline: scroll();
+
+    @keyframes floatie {
+    from {
+        Font-variant-settings:
+            “flot” 0,
+            “Pump” 0,
+            “bble” 0;
+    }
+    to {
+        Font-variant-settings:
+            “flot” 300,
+            “Pump” 500,
+            “bble” 100;
+        }
+    }</code></pre>
+                                <h3>Variable colour fonts</h3>
+                                <p>Fonts with variable colours, build up in palets</p>
+                                <pre class="code-example"><code>@font-palette-values {
+    font-family: ;
+
+    / * Choose the variable palet * /
+    base palette: 0;
+
+    / * Override a colour in the palet * /
+    override-colours: 10 lime;
+    }</code></pre>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd3-cassie" popovertargetaction="toggle" type="button" id="weekly-nerd3-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd3-file">Beyond tweening - Cassie Evens</label>
                         <section id="content-nerd3-cassie" popover>
-                            <h3>Beyond tweening - Cassie Evens</h3>
+                            <div class="spacing">
+                                <h3>Beyond tweening - Cassie Evens</h3>
+                                <h3>Reflectie</h3>
+                                <p>De presentatie van Cassie heeft me laten zien hoe het animeren van een website makkelijker kan met GSAP. Ik houd niet zo van JS schrijven, waardoor ik mijn websites zelden animeer of interactief maak. GSAP maakt dit makkelijker en neemt ook behoorlijk wat irritaties van CSS keyframes weg. Ik ga me dan ook zeker verdiepen in GSAP om dit in mijn latere projecten te gebruiken. Wel vroeg me meteen af of sommigen dingen niet wél al mogelijk zijn met CSS te animeren. Dat zou sommigen GSAP functionaliteiten een beetje overbodig maken, omdat zo min mogelijk JS gebruiken nu eenmaal beter is(rule of least power). Ik denk dat het daarom belangrijk is altijd kritisch te blijven op dit soort dingen.</p>
+                                <h3>Animation toolbox</h3>
+                                <h3>Tweens</h3>
+                                <p>Timelines to sequence animations(instead of offsetting with delay)</p>
+                                <p><code>gsap.quickSetter()</code> and <code>gsap.quickTo()</code> to make images follow mouse/cursor!</p>
+                                <h3>Utility methods</h3>
+                                <ul>
+                                    <li><code>utils.clamp()</code></li>
+                                    <li><code>utils.random()</code>for randomness in animation</li>
+                                    <li><code>utils.mapRange()</code>link animation values to the screen width or height</li>
+                                    <li><code>utils.wrap()</code></li>
+                                    <li><code>utils.pipe()</code></li>
+                                </ul>
+                                <h3>Let the ease do the work</h3>
+                                <h3>Useful stuff</h3>
+                                <p><code>matchMedia()</code>@media queries but in JS</p>
+                                <h3>Control methods</h3>
+                                <ul>
+                                    <li><code>play()</code></li>
+                                    <li><code>pause()</code></li>
+                                    <li><code>resume()</code></li>
+                                    <li><code>reverse()</code></li>
+                                    <li><code>restart()</code></li>
+                                </ul>
+                                <h3>Container animation</h3>
+                                <p>Scroll trigger within a scroll trigger</p>
+                                <pre class="code-example"><code>let scrollTween = gsap.to(".container", {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none", // <-- IMPORTANT! 
+  scrollTrigger: {
+    trigger: ".container",
+    start: "top top",
+    end: "+=3000",
+    pin: true,
+    scrub: 0.5
+  }
+});
+
+
+gsap.to(".box", {
+  y: -100,
+  scrollTrigger: {
+    trigger: ".box",
+    start: "left center",
+    containerAnimation: scrollTween, // <-- NEW!!
+  }
+});</code></pre>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd4-nils" popovertargetaction="toggle" type="button" id="weekly-nerd4-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd4-file">Design for flexibility - Nils Binder</label>
                         <section id="content-nerd4-nils" popover>
+                            <div class="spacing">
+                                <h3>Design for flexibility - Nils Binder</h3>
+                                <h3>Reflectie</h3>
+                                <p>Nils zijn presentaie focusde zich op de wrapper en de toepassing hiervan, en eigenlijk het weinig creatieve gebruik hiervan. Met name als het om schermgrootte en reseponsiveness gaat. Op het moment dat de schermgrootte veranderd veranderd er 9 van de 10 keer niks aan de wrapper waar de content in staat, best wel saai en een schril contrast wanneer het om print media zou gaan. Ik vind Nils zijn perspectief hierop dan ook erg goed gevonden en zeker de moeite waard om me in te verdiepen. Het uiteindelijke uitgangspunt was dat je anders moet ontwerpen dan de standaard lay-out en dat je het onverwacht moet maken. Een insteek die websites echt naar een hoger niveau kan tillen wanneer goed toegepast.</p>
+                                <ul>
+                                    <li><code>wrapper</code> makes sure content has a max width and size, adds space and centers content
+                                <pre class="code-example"><code>.wrapper {
+	/* take one of these values */
+	width: min(100% - 3rem, 75rem);
+	margin-inline: auto;
+}</code></pre></li>
+                                    <li>Figma auto lay-out = flex-box</li>
+                                    <li>Print ≠ web design for flexibility</li>
+                                    <li>Em = not based on root, but based on font size of block the element is in</li>
+                                    <li>Can use var() in grid</li>
+                                    <li>clamp() (to replace @media-query) middle value is the goal, when exceeded change to smaller or bigger value</li>
+                                </ul>
+                                <h3>🤠 @property / custom properties</h3>
+                                <p>To animate a custom property</p>
+                                <pre class="code-example"><code>@property --button-colour {
+	syntax: “<color>”
+	inherits: true;
+	initial-value: #000000;
+}
 
+Transition: --button-colour…;</code></pre>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd5-jkeith" popovertargetaction="toggle" type="button" id="weekly-nerd5-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd5-file">Imperative vs. declarative design - Jeremy Keith</label>
                         <section id="content-nerd5-jkeith" popover>
+                            <div class="spacing">
+                                <h3>Imperative vs. declarative design - Jeremy Keith</h3>
+                                <h3>Reflectie</h3>
+                                <p>Het concept van imperative en declerative was nieuw voor mij en ik vond Jeremy zijn talk dan ook super interessant. Tijdens zijn presentatie neigde ik al meteen voorkeur te hebben voor declerative, omdat ik van vrijheid houd en daarme kan experimenteren om altijd het beste uit mijn werk te halen. Deze manier van designen past bij mij als persoon die perfectionalistisch is, hierdoor kosten dingen me vaak wel meer tijd. Toch vond ik het interessant de verschillen te leren en in te zien wat de evtentuele voor en nadelen zijn. Deze kan ik meenemen in mijn loopbaan en in mijn achterhoofd houden en zo echt achter te komen wat bij mij past en in welke situaties/contexten. Ik denk dat je jezelf als designer hierdoor beter gaat leren kennen, wat altijd waardevol is!</p>
+                                <p class="sub-heading">2 ways of programming</p>
+                                <ul>
+                                    <li>Imperative programming = how to operate step by step(JS more powerful not fault tolerant)</li>
+                                    <li>Declarative programming = you just give the output you want(HTML, CSS both less powerful and fault tolerant)</li>
+                                </ul>
+                                <p class="sub-heading">2 different mindsets</p>
+                                <ul>
+                                    <li>Imperative = controlling the browser</li>
+                                    <li>Declarative = giving up control to the browser with default styling and functionality</li>
+                                </ul>
+                                <h3>Declarative design</h3>
+                                <p class="sub-heading">Giving up control in design</p>
+                                <ul>
+                                    <li>calc()</li>
+                                    <li>clamp()</li>
+                                    <li>min() and max()</li>
+                                    <li>min-content and max-content</li>
+                                    <li>Repeat()</li>
+                                    <li>minmax()</li>
+                                </ul>
+                                <h3>Declarative > imperative?</h3>
+                                <p class="sub-heading">It depends on</p>
 
+                                <ul>
+                                    <li>Declarative or imperative culture (how management happens)</li>
+                                    <li>Declarative or imperative design system (not explicitly telling or setting but giving a guideline, ‘#000000 code vs the border should be 10% lighter than the background colour’)</li>
+                                    <li>Declarative or imperative medium (imperative: print, native apps, os-specific)</li>
+                                </ul>
+                                <ul>
+                                    <li>Analytic thinking, you understand the whole by breaking things down into parts(things that always work the same)</li>
+                                    <li>Systems thinking, you understand the parts by looking at the whole behaving together</li>
+                                </ul>
+
+                                <h3>Tools & links</h3>
+                                <p class="sub-heading">For fluid responsive design</p>
+                                <p>🔗 Utopia.fyi</p>
+
+                                <p class="sub-heading">Learn to write better resilient CSS</p>
+                                <p>🔗 https://every-layout.dev</p>
+                                <p>🔗 Buildexcellentwebsit.es</p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd6-julia" popovertargetaction="toggle" type="button" id="weekly-nerd6-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd6-file">CSS character animations - Julia Miocene</label>
                         <section id="content-nerd6-julia" popover>
+                            <div class="spacing">
+                                <h3>CSS character animations - Julia Miocene</h3>
+                                <h3>Reflectie</h3>
+                                <p>Julia toonde ons haar beste CSS animaties. Ze ging niet diep in op de technische aspecten van haar werk, maar aan de details in de animatie was snel en duidelijk te zien hoe ingewikkeld maar gaaf haar pojecten zijn. Dit inspireerde me dan ook om mijn eigen illustraties uit te werken naar animaties met code. Ook omdat dit een goede manier is om CSS en @keyframes te oefenen. Daarbij liet ze een onderdeel zien waarbij ze svg animeert, die bewegen wanneer de gebruiker interactie met ze heeft. Iets wat mij heel erg aansprak en wat ik meteen wilde toepassen in al mijn projecten. Ik houd namelijk ontzettend van praktische en speelse manieren om de gebruikerservaring te verbeteren en interessanter voor de gebruiker te maken.</p>
+                                <p class="sub-heading">🔗 miocene.io/inspire</p>
 
+                                <p>Animate svg’s/icons with <code>stroke-dasharray</code> and <code>stroke-dashoffset</code></p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd7-rosa" popovertargetaction="toggle" type="button" id="weekly-nerd7-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd7-file">Circuit bending - Rosa</label>
                         <section id="content-nerd7-rosa" popover>
-
+                            <div class="spacing">
+                                <h3>Circuit bending - Rosa</h3>
+                                <h3>Reflectie</h3>
+                                <p>Rosa's presentatie was een hele andere dan de anderen, omdat ze niet over code heeft gepraat, maar over fysiek apparaten hacken. Ik dacht dan ook altijd dat hacken alleen met code op een computer kon, maar het tegenovergestelde blijkt. Ik denk dat Rosa voor haar projecten super ver 'buiten de box' moet denken om tot deze bijzondere toepassingen te komen. Dit is dan ook iets wat ik meeneem uit haar presentatie. Ook vertelde ze hoe appraten steeds minder persoonlijk worden, iets wat ik zelf ook herken en betreur.</p>
+                                <ul>
+                                    <li>Hacker = a person skilled in information technology who achieves goals by non-standard means </li>
+                                    <li>DIY ethos </li>
+                                    <li>Image magick</li>
+                                    <li>Learn by trying</li>
+                                    <li>Black boxes</li>
+                                    <li>Products are starting to get less and less personal</li>
+                                </ul>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd8-niels" popovertargetaction="toggle" type="button" id="weekly-nerd8-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd8-file">Project Fugu - Niels Leenheer</label>
                         <section id="content-nerd8-niels" popover>
-
+                            <div class="spacing">
+                                <h3>Project Fugu - Niels Leenheer</h3>
+                                <h3>Reflectie</h3>
+                                <p>Niels zijn presentatie en ambitie om (bonnen)printers te bouwen sprak mij in eerste instantie niet echt aan, al herkende ik al wel snel zijn frustraties van werken met printers. Na het oplossen van talloze problemen met printers bij vrienden en familie is me erg duidelijk geworden dat printers totaal niet consistent zijn. Wat altijd voor veel verwarring en problemen zorgt. Iets wat ik sterk terug zag bij Niels zijn vele printers en pogingen om deze met elkaar en met andere apparaten te laten communiceren. Ik wist dan ook niet dat dit wederom zo ingewikkeld in elkaar zit. Zijn statement dat er over 2 jaar nergens meer barcodes zullen zijn vind ik erg interessant ik kijk er dan ook naaruit om dit te zien veranderen.</p>
+                                <ul>
+                                    <li>Bonnenprinter met twee endpoints</li>
+                                    <li>Fugu laat ons praten met binnenprinters, maar wel eerst hun taal leren</li>
+                                    <li>Printer communiceert met keyboard commando’s (HTML naar ‘printertaal’)</li>
+                                    <li>Unicode</li>
+                                    <li>Afbeeldingen met bitmap</li>
+                                    <li>😂 Aantekening JUST IN CASE: how to kpn opblazen, met vaste telefoon lijn + bonnenprinter 😂</li>
+                                    <li>BOLD statement, over 2 jaar nergens meer barcodes</li>
+                                </ul>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd9-nienke" popovertargetaction="toggle" type="button" id="weekly-nerd9-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd6-file">Accessability meetup - Nienke de Keijzer</label>
                         <section id="content-nerd9-nienke" popover>
-
+                            <div class="spacing">
+                                <h3>Accessability meetup: thinking outside of the accessibility box - Nienke de Keijzer</h3>
+                                <h3>Reflectie</h3>
+                                <p>Het was inspirerend om te zien hoe Nienke zo snel op zo'n cruciale plek in gekomen, maar ook best wel schokkerend om te zien hoe een belangrijk transport bedrijf, waarvan een heleboel mensen(ook disabled) dagelijks afhankelijk zijn nog zo weinig tijd had geïnvesteerd in toegankelijkheid en het mogelijk maken van toegankelijk reizen. De grootste les die ik hieruit haalde is dat testen simpelweg heel erg belangrijk is en dat streven naar dé nieuwste techniecken en coole dingen niet toegankelijk is. Dit zou dan echt goed getest moeten worden en aangpast worden met de juiste toegankelijkheid.</p>
+                                <p class="sub-heading">"We always want super new cool complicated things, but the most simple things for disabled people are not there yet"</p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd10-io" popovertargetaction="toggle" type="button" id="weekly-nerd10-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd10-file"> - iO</label>
                         <section id="content-nerd10-io" popover>
-
+                            <div class="spacing">
+                                <h3>iO</h3>
+                                <p class="sub-heading">Experience is everything</p>
+                                <h3>Reflectie</h3>
+                                <p>Om deze keer bij een bedrijf zelf langs te gaan was een leuke afwisseling. Op die manier proef je toch wat meer sfeer en krijg je meer mee van wat voor soort mensen er werken. In eerste instantie kwam iO over als een vrij commercieel bedrijf, iets wat persoonlijk niet zo goed bij mij past. Wel vond ik de talks en de verschillen ertussen leerzaam. De presentatie van Dave Bitter over hoe er verandering plaats vind in hoe mensen informatie vinden op het internet, bijvoorbeeld door AI als nieuwe bron, liet me nadenken over hoe dit invloed heeft op mijn werkt. Steve's twitter bot project zou ik zelf nooit aangenomen hebben als developer/designer. Ik ben persoonlijk iemand die erg veel waarde hecht aan principes en dit project gaat dan ook aan mijn principes voorbij. Ook omdat ik geen fan ben van het platform Twitter en omdat ik erin geloof dat design en applicaties altijd transparant en eerlijk moeten zijn. Clarke Verdel praatte over 'How do you automate testing your components like a real user?', een nieuw concept voor mij, dat UX en development weer wat meer samenbracht voor mij. Het wekte dan ook interesse bij mij op hoe al gedevelopde projecten getest worden en hoe dit anders is van design testen. Ik denk dat dit waardevol is om me verder in te verdiepen en mogelijk toe te passen bij mijn eigen projecten die ik live zou willen zetten.</p>
+                                <h3>The rise of AI-powered voice interfaces(on the web)</h3>
+                                <ul>
+                                    <li>There is a change in how people find information</li>
+                                    <li>SpeechRecognition WebAPI</li>
+                                    <li>Performance over everything</li>
+                                    <li>AI is just another data source, it’s the UX that makes the difference</li>
+                                    <li>Don’t forget about older techniques</li>
+                                </ul>
+                                <h3>How do you automate testing your components like a real user?</h3>
+                                <p class="sub-heading">The testing trophy</p>
+                                <ul>
+                                    <li>Static testing/tooling</li>
+                                    <li>
+                                        <ul>
+                                            <li>Linting, ESLint</li>
+                                            <li>Javascript type checker</li>
+                                            <li>Typescript</li>
+                                        </ul>
+                                    </li>
+                                    <li>Unit/component testing</li>
+                                    <li>Integration testing</li>
+                                    <li>E2E(end 2 end)System testing</li>
+                                </ul>
+                                <p class="sub-heading">Confidence</p>
+                                <p class="sub-heading">Test your code through:</p>
+                                <ul>
+                                    <li>Node Runtime</li>
+                                    <li>Synthetic DOM</li>
+                                    <li>Browser testing</li>
+                                </ul>
+                                <h3>Tools & links</h3>
+                                <p>🔗 Storybook for design</p>
+                                <p class="sub-heading">Browser testing</p>
+                                <p>🔗 Cypress</p>
+                                <p>🔗 Playwright</p>
+                                <p>🔗 Vitest</p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd11-q42" popovertargetaction="toggle" type="button" id="weekly-nerd11-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd11-file">A11Y - Q42</label>
                         <section id="content-nerd11-q42" popover>
+                            <div class="spacing">
+                                <h3>A11Y - Q42</h3>
+                                <h3>Reflectie</h3>
+                                <p>Bij Q42 stond A11Y, ofwel toegankelijkheid, centraal. Ik vond het leuk en goed om te zien hoe Q42 binnen de weinig bedrijven valt die zich echt bezig houden met toegankelijkheid. Dus niet alleen hoe bestaande websites/ideeën toegankelijk gemaakt worden, maar hoe ze juist projecten om toegankelijkheid heen laten draaien. Hierdoor zie dat er ook heel veel creativiteit in accessibility projecten kan zitten. Zoals bij hun grafische rekenmachine met geluid. Wel zie je dat dit onvermijdelijk samen gaat met een heleboel testen en onderzoek doen. Best logisch, en ook grappig om te zien hoe dan je creativiteit aan toegankelijkheid wordt getoetst. Zo strijden ze inderdaad voor de eindgebruiker en ik ben er mee eens dat dit meer gedaan moet worden</p>
+                                <h3>Manier van werken</h3>
+                                <ul>
+                                    <li>WOOtcamp</li>
+                                    <li>Passiedag</li>
+                                    <li>Jumpstart</li>
+                                    <li>Bedenktijdjes</li>
+                                </ul>
 
+                                <h3>A11Y en EAA</h3>
+                                <ul>
+                                    <li>Mensen gebruiken product anders dan dat je verwacht</li>
+                                    <li>European accessibility act</li>
+                                    <li>WCAG geeft ook tips</li>
+                                    <li>Wat als je niet goed kunt zien, horen, bewegen of het niet goed snapt?</li>
+                                </ul>
+                                <h3>Project 1: SenseMath</h3>
+                                <ul>
+                                    <li>- Wiskundige functies naar geluid</li>
+                                    <li>- Grafieken zijn per definitie een visueel iets</li>
+                                </ul>
+
+                                <p class="sub-heading">Geluid soort/type afhankelijk van wiskundig niveau</p>
+                                <ul>
+                                    <li>- Hoe jonger hoe minder gedetailleerd het geluid</li>
+                                    <li>- Hoe ouder hoe meer gedetailleerd het geluid</li>
+                                    <li>- Kopjes zijn net zo belangrijk op papier als in html</li>
+                                </ul>
+                                <h3>Project 1: Oculi Mundi</h3>
+                                <ul>
+                                    <li>Power of CSS</li>
+                                    <li>Gevoel van door een collectie heen lopen</li>
+                                    <li>Perspectief en alleen z-as</li>
+                                </ul>
+                                <h3>Tools & links</h3>
+                                <p>🔗 Eidra</p>
+                                <p>🔗 Miclio</p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd12-mar" popovertargetaction="toggle" type="button" id="weekly-nerd12-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd12-file">European Accessibility Act - Marieke de Hoop</label>
                         <section id="content-nerd12-mar" popover>
-
+                            <div class="spacing">
+                                <h3>European Accessibility Act - Marieke de Hoop</h3>
+                                <h3>Reflectie</h3>
+                                <p>Marieke kwam vertellen over de EAA, ofwel European Accessibility Act. Een baanbrekende Europese wet die toegankelijkheids eisen stelt aan alle nieuwe digitale media/content. Dit gaat zo ver als betalingsystemen in winkels en gaat dus echt de toegankelijkheid van heel veel ervaringen drastisch veranderen. Dat deze wet wordt ingesteld is super belangrijk en natuurlijk eigenlijk veel te laat. Ik vraag me dan ook af hoe dit gehandhaafd gaat worden. Ook besef ik dat dit een enorme impact gaat hebben op mijn werk, ondankds dat wij door studie hier al veel mee bezig zijn, zal dit ons forceren dit niet over te slaan of achterwege te laten. Het is daarom belangrijk me hier in te verdiepen en welke eisen ze precies stellen!</p>
+                                <h3>Voor wie?</h3>
+                                <p>32% van de NL heeft een permanente beperking(zowel zichtbaar als niet zichtbaar)</p>
+                                <h3>Het hebben van een beperking is een ontzettend persoonlijke ervaring</h3>
+                                <ul>
+                                    <li>Audits(onderzoeken web en apps)</li>
+                                        <li>= systematisch onafhankelijk onderzoek uitgevoerd door een auditor</li>
+                                    <li>Consultancy(advies)</li>
+                                    <li>= betald advies geven over toegankelijkheid</li>
+                                    <li>Veel meer afwisselend</li>
+                                    <li>Project management agile</li>
+                                    <li>Trainingen/cursussen</li>
+                                        <li>Trainingen/cursussen</li>
+                                    <li>Toegankelijk ontwikkelen(als je bouwt)</li>
+                                    <li>Producten toegankelijk maken</li>
+                                    <li>Digitale en fysieke toegankelijkheid(in de winkel)</li>
+                                        <li>Zelfscankassa’s, geldautomaten en andere betaalterminals</li>
+                                </ul>
+                                <h3>Extensions</h3>
+                                <ul>
+                                    <li>* Stylus</li>
+                                    <li>* Colour contrast checker</li>
+                                    <li>* Stark accessibility checker</li>
+                                </ul>
+                                <h3>Wetgeving en handhaving</h3>
+                                <ul>
+                                    <li>European accessibility act</li>
+                                    <li>Wanneer je een contract aangaat</li>
+                                    <li>Voor alle nieuwe content</li>
+                                </ul>
+                                <h3>Uitzonderingen</h3>
+                                <ul>
+                                    <li>Bedrijfsgrootte en doelgroep</li>
+                                    <li>B2B</li>
+                                    <li>Minder dan 10</li>
+                                    <li>Minder dan 2 miljoen</li>
+                                    <li>‘Onevenredige last’ = als het zoveel werk is of als bedrijf eraan onderdoor gaat</li>
+                                    <li>Juridische gevolgen(meldingen —> boete van 20 miljoen of 10% omzet)</li>
+                                </ul>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd13-pre" popovertargetaction="toggle" type="button" id="weekly-nerd13-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd12-file">Pre CSS day</label>
                         <section id="content-nerd13-pre" popover>
-
+                            <div class="spacing">
+                                <h3>Pre CSS day</h3>
+                                <h3>Reflectie</h3>
+                                <p>Het was leuk om te zien hoe er de tijd werd genomen om een pre-css day te organiseren. Dit gaf een goeie indruk van wat je bij CSS day zelf kan verwachten. Talks over nieuwe technieken en invalshoeken. In dit geval ging het vooral over het laatste, invalshoeken. Nils lichtte wederom zijn wrapper visie toe en Mriam Suzanne herrinnerde ons aan de visie van het web en hoe deze eigenlijk niet meer gevolgd wordt, maar ontzettend gepolitiekiseerd is. Vooral dat het web politiek is deed me inzien hoeveel misbruik er eigenlijk gemaakt wordt van goede bedoelingen en initiatieven op het internet. Ik vind dit erg zonde en realiseer me hoe egoïstisch sommigen dingen als software zijn en altijd al geweest zijn.</p>
+                                <h3>Unwrapping web design</h3>
+                                <p class="sub-heading">Let’s talk about the wrapper = to wrap all content for positioning(width, padding and entering)</p>
+                                <h3>Old way</h3>
+                                <pre class="code-example"><code>.wrapper {
+	max-width: 75rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}</code></pre>
+                                <h3>New way</h3>
+                                <pre class="code-example"><code>.wrapper {
+	width: min(100% -3rem, var(—wrapper-max, 75rem))
+	margin-inline: auto;
+}</code></pre>
+                                <h3>‘Pro’ way</h3>
+                                <pre class="code-example"><code>.wrapper {
+	margin-inline: ;
+}</code></pre>
+                                <h3>Why?</h3>
+                                <ul>
+                                    <li>Why are we making websites constrained to the vertical screen and width</li>
+                                    <li>A grid/columns with content responding to the size of the screen</li>
+                                    <li>Don’t keep designing the simple lay-out</li>
+                                    <li>Put whitespace where it is unexpected</li>
+                                    <li>Unwrap the wrap</li>
+                                </ul>
+                                <h3>Politics of CSS</h3>
+                                <p>The C in CSS = Cascade of stylesheets</p>
+                                <p>First browser was made with a political view, called World Wide Web, but only accessible with the Next computer</p>
+                                <p>Technology is political</p>
+                                <h3>Early web</h3>
+                                <ul>
+                                    <li>All styles are universal, the same on every website</li>
+                                    <li>To understand CSS, set your preferences</li>
+                                    <li>Safari still lets you upload your own stylesheet CSS</li>
+                                </ul>
+                                <h3>Web now</h3>
+                                <ul>
+                                    <li>The current web vision has shifted to how can we make money of everything, instead of the original thought of how can we share scientific information for free</li>
+                                    <li>We bring different visions to the technology</li>
+                                    <li>Plug and play vs bootstrapping</li>
+                                    <li>Who defines the default?</li>
+                                </ul>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
                         <input popovertarget="content-nerd14-CSS" popovertargetaction="toggle" type="button" id="weekly-nerd14-file" name="weekly-nerds">
                         <label class="file-name" for="weekly-nerd14-file">CSS day</label>
                         <section id="content-nerd14-CSS" popover>
-
+                            <div class="spacing">
+                                <h3>CSS day</h3>
+                                <h3>Reflectie</h3>
+                                <p>CSS day was voor mij echt een highlight en de perfecte afsluiting van alle weekly nerds. Een plek waar al deze 'nerds' samenkwamen en hun visies en skills lieten zien. Door CSS day kwam de 'echte' development wereld ineens heel dichtbij en dat was erg gaaf om te zien. De sfeer was erg open en creatief en je merkte dat iedereen daar echt voor hun passie komt. Ook dat Google aanwezig is om feedback te vragen, aan in die zin hun gebruikers, laat zien hoe klein deze wereld eigenlijk is en dat wij als studenten er al een meer significante rol in hebben dan we eigenlijk denken en beseffen.</p>
+                                <p>Dit heeft me dan ook laten inzien dat ik graag door wil gaan met development en dit veel meer wil combineren met design, omdat ik denk hier veel potentie uit te kunnen halen als designer. De talks die ik die dag heb bijgewoond gingen over @scope en hoe advanced scoping overlappende styling en problemen kan voorkomen(super nuttig voor in het werkveld), over smart lay-outs en hoe we deze nog slimmer en meer responsive kunnen maken(waar ik me zeker in ga verdiepen), makkelijkere form control styling dat er binnenkort aankomt(yesss eindelijk!), hoe je een computer kan bouwen met CSS(heel ingineus) en refactoring CSS.</p>
+                            </div>
                         </section>
                     </li>
                     <li class="file">
@@ -267,25 +666,25 @@
                             <h3>Mijn doelen</h3>
                             <h3>Mijn vorige leerdoelen</h3>
                             <ol>
-                                <li>1. CSS animeren, transities & interaction</li>
-                                <li>2. Beter begrip van websites</li>
-                                <li>3. Mijn eigen meer professionele manier van coderen ontwikkelen</li>
-                                <li>4. Meer out of the box en vette, expressieve functies ontwikkelen(meer speels, interactie, laten nadenken en websites meer fun en persoonlijk maken)(brutalists websites)</li>
-                                <li>5. Design visie meer ontwikkelen en doorvoeren, ook in code</li>
+                                <li>CSS animeren, transities & interaction</li>
+                                <li>Beter begrip van websites</li>
+                                <li>Mijn eigen meer professionele manier van coderen ontwikkelen</li>
+                                <li>Meer out of the box en vette, expressieve functies ontwikkelen(meer speels, interactie, laten nadenken en websites meer fun en persoonlijk maken)(brutalists websites)</li>
+                                <li>Design visie meer ontwikkelen en doorvoeren, ook in code</li>
                             </ol>
                             <p>Als eerste leerdoelen had ik veel leerdoelen met specifieke doelen, zoals het toepassen van CSS animaties en een beter begrip krijgen van websites. Uiteindelijk heb ik eigenlijk al mijn leerdoelen gehaald of er in ieder geval genoeg aan gedaan/begonnen om ze gehaald te hebben. Zo zal het doel ‘Mijn eigen meer professionele manier van coderen ontwikkelen’ een ongoing proces zijn.</p>
                             <h3>Drie persoonlijke leerdoelen voor meesterproef</h3>
                             <ol>
                                 <li>
-                                    <p>1. Alles leren over er komt kijken bij goed en efficient samenwerken met coderen. (Waar moet je op letten? Hoe verdeel je de taken/wie doet wat? Werken met gitHub)</p>
+                                    <p>Alles leren over er komt kijken bij goed en efficient samenwerken met coderen. (Waar moet je op letten? Hoe verdeel je de taken/wie doet wat? Werken met gitHub)</p>
                                     <p>Ik ben tevreden als ik een duidelijk beeld heb van samenwerken met coderen en punten heb waar ik/we in de toekomst op moeten letten.</p>
                                 </li>
                                 <li>
-                                    <p>2. Mijn ‘handelsmerk’ vinden en toepassen, sluit aan op ‘mijn eigen meer professionele manier van coderen ontwikkelen’ maar dan wat mijn codeerprojecten kenmerken ontdekken/onderzoeken(zowel visueel als UX en interactie en technieken)</p>
+                                    <p>Mijn ‘handelsmerk’ vinden en toepassen, sluit aan op ‘mijn eigen meer professionele manier van coderen ontwikkelen’ maar dan wat mijn codeerprojecten kenmerken ontdekken/onderzoeken(zowel visueel als UX en interactie en technieken)</p>
                                     <p>Ik ben tevreden als ik duidelijk heb voor mezelf wat mij als developer onderscheid van anderen en wat mijn 'niche' is, plus als ik specifieke codeertechnieken vind/gebruik die ik eigen maak of in de toekomst vaker verwacht toe te passen in mijn codeerprojecten.</p>
                                 </li>
                                 <li>
-                                    <p>3. Meer denken aan de gebruikerservaring, verder dan alleen flow(wat vaak al als erg prettig wordt ervaren in mij werk) met progressive enhancement en accessibility
+                                    <p>Meer denken aan de gebruikerservaring, verder dan alleen flow(wat vaak al als erg prettig wordt ervaren in mij werk) met progressive enhancement en accessibility
                                     (Prefers reduced motion etc.) Meer denken aan de gebruikers voorkeuren</p>
                                     <p>Ik ben tevreden als ik heb geconceptualiseerd over functionaliteiten die de gebruikerservaring verbeteren al dan niet leuker maken voor een specifieke doelgroep, ik mij met accessibility richtlijnen in code bezig heb gehouden en specifiek technische codeertechnieken/methoden heb uitgevoerd. Denk aan coderen voor screenreaders, tab navigatie, responsiveness in personalisatie(dark/light mode en andere gebruikersvoorkeuren) en browser tech of reduced motion.</p>
                                 </li>
@@ -303,83 +702,68 @@
                         <input popovertarget="reflection-2" popovertargetaction="toggle" type="button" id="ref-2-file" name="weekly-nerds">
                         <label class="file-name" for="ref-2-file">Reflection 2</label>
                         <section id="reflection-2" popover>
-                                    <h3>Reflectie meesterproef</h3>
-                                    <p>Over het algemeen denk ik dat de meesterproef erg goed is gegaan ondanks dat we veel moeite hadden om tot een definitief concept te komen. Omdat de samenwerking goed ging, we naar elkaar luisterden en we het persoonlijk met elkaar konden vinden, zijn we uiteindelijk tot een duidelijk en af concept gekomen. Als dit niet het geval was, durf ik niet te zeggen of dit gelukt zou zijn.</p>
-                                    <h3>Wat ging goed/viel mee?</h3>
-                                    <ul class="reflection">
-                                        <li>
-                                            <p>We stelden elkaar continu veel vragen en vroegen om bevestiging, hierdoor zaten we grotendeels altijd op één lijn.</p>
-                                        </li>
-                                        <li>
-                                            <p>We hielpen elkaar goed wanneer iemand hulp nodig had of biedde dit vanuit onszelf al aan wanneer iemand moeite had.</p>
-                                        </li>
-                                        <li>
-                                            <p>Ondanks dat de opdrachtgever aan het begin niet helemaal tevreden was, ging de communicatie en de verwachtingen die hij van ons had goed en hebben we denk ik geleverd wat hij van ons verwachtte.</p>
-                                        </li>
-                                    </ul>
-                                    <h3>Wat ging minder/wat viel tegen?</h3>
-                                    <ul>
-                                        <li>
-                                            <p>Aan het begin liet Cas ons erg vrij in wat hij wilde en van ons verwachtte, zolang we het maar konden onderbouwen. Dit gaf ons erg veel vrijheid en het ook moeilijker om iets te bedenken waar hij tevreden mee zou zijn. Door te beginnen met onderzoeken, veel ideeën te schetsen en </p>
-                                        </li>
-                                        <li>
-                                            <p>Ook hadden we pas veel later toegang tot de data dan verwacht en was deze eigenlijk niet optimaal en inconsistent om te gebruiken, zo leverde dit veel vertraging voor ons op en komen veel accessibility problemen door deze data zelf en hebben wij dit niet op kunnen lossen</p>
-                                        </li>
-                                        <li>
-                                            <p>Het komen tot een concreet concept was moeilijk, ik denk vooral omdat we continu veel verschillende feedback kregen van verschillende mensen. Dit sprak elkaar vaak tegen en hierdoor wisten we vaak niet zo goed wat we ermee aan moesten.</p>
-                                        </li>
-                                    </ul>
-                                    <h3>Persoonlijke leerdoelen</h3>
-                                    <ol>
-                                        <li>
-                                            <h4>
-                                                1. Alles leren over er komt kijken bij goed en efficient samenwerken met coderen. (Waar moet je op letten? Hoe verdeel je de taken/wie doet wat? Werken met gitHub)
-                                                Ik ben tevreden als ik een duidelijk beeld heb van samenwerken met coderen en punten heb waar ik/we in de toekomst op moeten letten.
-                                            </h4>
-                                            <p>Ik heb dit leerdoel gehaald, omdat ik veel lessen heb gehaald uit het samenwerken en een goed beeld heb voor in de toekomst waar ik op moet letten als in nog een keer ga samenwerken aan codeerprojecten. Notabene heb ik hier een lijst van gemaakt:</p>
-                                            <p>Things I learned with working on group code projects
-* One person takes notes and documents general process
-* Don’t be afraid to ask (critical) questions and be clear in want you need and expect from opdrachtgever
-* One person for contact
-* One or two people to inspect data (access, content, relations, retrieval and endpoints)
-* General structure of folders with naming, read me and wiki
-
-* Wireframes are not only important to use for the flow, but also to experiment and get everyone on one line. As well as show client what to expect
-* Take client through your process
-* Clients generally don’t really know what they want or need to see, tell them what to expect next time and what you’ll show
-* Één persoon aanstellen als notulist, die aantekeningen maakt bij meetings en feedback —> zo gaat het proces niet verloren en ontstaat er later geen verwarring
-	
-* Testplan laten opstellen door één persoon die hier goed in is en daarna met iedereen doorheen gaan, kijken wat belangrijk is (wat echt verteld/uitgelegd moet worden aan testpersoon), waar je antwoorden op/duidelijkheid over wilt uit het testen (welke vragen moeten er nog bij) en hoe je het gaat documenteren
-* Beginnen met alle branches aanmaken voor de pagina’s en features plus de components ervoor
-* Algemene namen voor pagina’s en functies bespreken om later verwarring en vele aanpassingen te voorkomen
-* Iedereen heeft een andere manier van coderen, ondanks dat je code conventies opstelt, blijft het verschil groot en voor anderen soms onlogisch
-* Feedback geven op elkaars code is moeilijk, maar wel erg belangrijk om code begrijpelijk en makkelijk aanpasbaar te houden —> miss goed om na een eerste prototype elkaars code te bekijken en feedback te geven, om later veel of grote aanpassingen te voorkomen
-* Één persoon aanstellen om WCAG richtlijnen te onderzoeken en te handhaven in eigen code
-* Het concept dat je bedenkt/uitwerkt is volledig afhankelijk van de content/data die beschikbaar is, deze moeten op elkaar aangepast worden, dan wel voor elkaar gemaakt worden
-
-* Van te voren afspreken welke styling in welk bestand moet, base, alle base css over de hele website als headings en tekst</p>
-                                        </li>
-                                        <li>
-                                            <h4>
-                                                2. Mijn ‘handelsmerk’ vinden en toepassen, sluit aan op ‘mijn eigen meer professionele manier van coderen ontwikkelen’ maar dan wat mijn codeerprojecten kenmerken ontdekken/onderzoeken(zowel visueel als UX en interactie en technieken)
-                                                Ik ben tevreden als ik duidelijk heb voor mezelf wat mij als developer onderscheid van anderen en wat mijn 'niche' is, plus als ik specifieke codeertechnieken vind/gebruik die ik eigen maak of in de toekomst vaker verwacht toe te passen in mijn codeerprojecten.
-                                            </h4>
-                                            <p>Ik heb dit leerdoel gehaald, omdat ik tijdens het samenwerken wel echt bevestiging heb gekregen van waar mijn sterke punten liggen binnen coderen. En dat is UX in de flow en code van een website, overzicht houden, consistente code waarborgen, semantisch coderen en zoveel mogelijk the rule of least power gebruiken(bijna geen JS gebruikt).
-                                                Ook heb ik technieken/methoden al meer eigen gemaakt, zoals het gebruiken van details en summary voor het switchen tussen content en veel flexbox.</p>
-                                        </li>
-                                        <li>
-                                            <h4>
-                                                3. Meer denken aan de gebruikerservaring, verder dan alleen flow(wat vaak al als erg prettig wordt ervaren in mij werk) met progressive enhancement en accessibility
-                                                (Prefers reduced motion etc.) Meer denken aan de gebruikers voorkeuren
-                                                Ik ben tevreden als ik heb geconceptualiseerd over functionaliteiten die de gebruikerservaring verbeteren al dan niet leuker maken voor een specifieke doelgroep, ik mij met accessibility richtlijnen in code bezig heb gehouden en specifiek technische codeertechnieken/methoden heb uitgevoerd. Denk aan coderen voor screenreaders, tab navigatie, responsiveness in personalisatie(dark/light mode en andere gebruikersvoorkeuren) en browser tech of reduced motion.
-                                            </h4>
-                                            <p>
-                                                Ik heb dit gehaald, omdat ik geconceptualiseerd heb over functionaliteiten die de gebruikerservaring verbeteren, zoals het switchen tussen content met details en summary, maar ook het gebruik van de prefers reduced motion media query. Ook heb ik mij bezig gehouden met accessibility richtlijnen in code, zoals het toegankelijk maken van svg's voor screenreaders en het verbeteren van de headings van Framer Framed. Ik heb hiervoor ook de data en de uitkomst van het WCAG onderzoek van FF onderzocht.
-                                            </p>
-                                        </li>
-                                    </ol>
-                                    <h3>Highlights weekly nerds</h3>
-                                    <p>De gootste highlight van de weekly nerds was voor mij toch wel CSS day, waar ik een dag naartoe ben geweest. Door alle gave projecten van de pro's te zien weet ik zeker dat ik development en coderen echt mee wil gaan nemen in mijn loopbaan voor de toekomst, samen met design. De grootste les die ik uit alle weekly nerds heb gehaald is dat je vooral moet doen wat je leuk vind en waar je goed in bent en dat je dan altijd succesvol zal worden op een manier!</p>
+                            <h3>Reflectie meesterproef</h3>
+                            <p>Over het algemeen denk ik dat de meesterproef erg goed is gegaan ondanks dat we veel moeite hadden om tot een definitief concept te komen. Omdat de samenwerking goed ging, we naar elkaar luisterden en we het persoonlijk met elkaar konden vinden, zijn we uiteindelijk tot een duidelijk en af concept gekomen. Als dit niet het geval was, durf ik niet te zeggen of dit gelukt zou zijn.</p>
+                            <h3>Wat ging goed/viel mee?</h3>
+                            <ul class="reflection">
+                                <li>We stelden elkaar continu veel vragen en vroegen om bevestiging, hierdoor zaten we grotendeels altijd op één lijn</li>
+                                <li>We hielpen elkaar goed wanneer iemand hulp nodig had of biedde dit vanuit onszelf al aan wanneer iemand moeite had</li>
+                                <li>Ondanks dat de opdrachtgever aan het begin niet helemaal tevreden was, ging de communicatie en de verwachtingen die hij van ons had goed en hebben we denk ik geleverd wat hij van ons verwachtte</li>
+                            </ul>
+                            <h3>Wat ging minder/wat viel tegen?</h3>
+                            <ul>
+                                <li>Aan het begin liet Cas ons erg vrij in wat hij wilde en van ons verwachtte, zolang we het maar konden onderbouwen. Dit gaf ons erg veel vrijheid en het ook moeilijker om iets te bedenken waar hij tevreden mee zou zijn. Door te beginnen met onderzoeken, veel ideeën te schetsen, feedback te vragen en te testen zijn we uiteindelijk tot een definitief concept gekomen.</li>
+                                <li>Ook hadden we pas veel later toegang tot de data dan verwacht en was deze eigenlijk niet optimaal en inconsistent om te gebruiken, zo leverde dit veel vertraging voor ons op en komen veel accessibility problemen door deze data zelf en hebben wij dit niet op kunnen lossen</li>
+                                <li>Het komen tot een concreet concept was moeilijk, ik denk vooral omdat we continu veel verschillende feedback kregen van verschillende mensen. Dit sprak elkaar vaak tegen en hierdoor wisten we vaak niet zo goed wat we ermee aan moesten.</li>
+                            </ul>
+                            <h3>Persoonlijke leerdoelen</h3>
+                            <ol>
+                                <li>
+                                    <div class="spacing">
+                                        <h4>Alles leren over er komt kijken bij goed en efficient samenwerken met coderen. (Waar moet je op letten? Hoe verdeel je de taken/wie doet wat? Werken met gitHub)</h4>
+                                        <p>Ik ben tevreden als ik een duidelijk beeld heb van samenwerken met coderen en punten heb waar ik/we in de toekomst op moeten letten.</p>
+                                    
+                                        <p>Ik heb dit leerdoel gehaald, omdat ik veel lessen heb gehaald uit het samenwerken en een goed beeld heb voor in de toekomst waar ik op moet letten als in nog een keer ga samenwerken aan codeerprojecten. Notabene heb ik hier een lijst van gemaakt:</p>
+                                        <h4>Things I learned with working on group code projects:</h4>
+                                        <ul>
+                                            <li>One person takes notes and documents general process</li>
+                                            <li>Één persoon aanstellen als notulist, die aantekeningen maakt bij meetings en feedback —> zo gaat het proces niet verloren en ontstaat er later geen verwarring</li>
+                                            <li>Don’t be afraid to ask (critical) questions and be clear in want you need and expect from the client</li>
+                                            <li>One person for contact</li>
+                                            <li>One or two people to inspect data (access, content, relations, retrieval and endpoints)</li>
+                                            <li>General structure of folders with naming, read me and wiki</li>
+                                            <li>Wireframes are not only important to use for the flow, but also to experiment and get everyone on one line. As well as show client what to expect</li>
+                                            <li>Take client through your process</li>
+                                            <li>Clients generally don’t really know what they want or need to see, tell them what to expect next time and what you’ll show</li>
+                                            <li>Testplan laten opstellen door één persoon die hier goed in is en daarna met iedereen doorheen gaan, kijken wat belangrijk is (wat echt verteld/uitgelegd moet worden aan testpersoon), waar je antwoorden op/duidelijkheid over wilt uit het testen (welke vragen moeten er nog bij) en hoe je het gaat documenteren</li>
+                                            <li>Beginnen met alle branches aanmaken voor de pagina’s en features plus de components ervoor</li>
+                                            <li>Algemene namen voor pagina’s en functies bespreken om later verwarring en vele aanpassingen te voorkomen</li>
+                                            <li>Iedereen heeft een andere manier van coderen, ondanks dat je code conventies opstelt, blijft het verschil groot en voor anderen soms onlogisch</li>
+                                            <li>Feedback geven op elkaars code is moeilijk, maar wel erg belangrijk om code begrijpelijk en makkelijk aanpasbaar te houden —> miss goed om na een eerste prototype elkaars code te bekijken en feedback te geven, om later veel of grote aanpassingen te voorkomen</li>
+                                            <li>Één persoon aanstellen om WCAG richtlijnen te onderzoeken en te handhaven in eigen code</li>
+                                            <li>Het concept dat je bedenkt/uitwerkt is volledig afhankelijk van de content/data die beschikbaar is, deze moeten op elkaar aangepast worden, dan wel voor elkaar gemaakt worden</li>
+                                            <li>Van te voren afspreken welke styling in welk bestand moet, base, alle base css over de hele website als headings en tekst</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="spacing">
+                                        <h4>Mijn ‘handelsmerk’ vinden en toepassen, sluit aan op ‘mijn eigen meer professionele manier van coderen ontwikkelen’ maar dan wat mijn codeerprojecten kenmerken ontdekken/onderzoeken(zowel visueel als UX en interactie en technieken)</h4>
+                                        <p>Ik ben tevreden als ik duidelijk heb voor mezelf wat mij als developer onderscheid van anderen en wat mijn 'niche' is, plus als ik specifieke codeertechnieken vind/gebruik die ik eigen maak of in de toekomst vaker verwacht toe te passen in mijn codeerprojecten.</p>
+                                        <p>Ik heb dit leerdoel gehaald, omdat ik tijdens het samenwerken wel echt bevestiging heb gekregen van waar mijn sterke punten liggen binnen coderen. En dat is UX in de flow en code van een website, overzicht houden, consistente code waarborgen, semantisch coderen en zoveel mogelijk the rule of least power gebruiken(bijna geen JS gebruikt). Ook heb ik technieken/methoden al meer eigen gemaakt, zoals het gebruiken van details en summary voor het switchen tussen content en veel flexbox.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="spacing">
+                                        <h4>Meer denken aan de gebruikerservaring, verder dan alleen flow(wat vaak al als erg prettig wordt ervaren in mij werk) met progressive enhancement en accessibility
+                                        (Prefers reduced motion etc.) Meer denken aan de gebruikers voorkeuren</h4>
+                                        <p>Ik ben tevreden als ik heb geconceptualiseerd over functionaliteiten die de gebruikerservaring verbeteren al dan niet leuker maken voor een specifieke doelgroep, ik mij met accessibility richtlijnen in code bezig heb gehouden en specifiek technische codeertechnieken/methoden heb uitgevoerd. Denk aan coderen voor screenreaders, tab navigatie, responsiveness in personalisatie(dark/light mode en andere gebruikersvoorkeuren) en browser tech of reduced motion.</p>
+                                        <p>Ik heb dit gehaald, omdat ik geconceptualiseerd heb over functionaliteiten die de gebruikerservaring verbeteren, zoals het switchen tussen content met details en summary, maar ook het gebruik van de prefers reduced motion media query. Ook heb ik mij bezig gehouden met accessibility richtlijnen in code, zoals het toegankelijk maken van svg's voor screenreaders en het verbeteren van de headings van Framer Framed. Ik heb hiervoor ook de data en de uitkomst van het WCAG onderzoek van FF onderzocht.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                            <h3>Highlights weekly nerds</h3>
+                            <p>De gootste highlight van de weekly nerds was voor mij toch wel CSS day, waar ik een dag naartoe ben geweest. Door alle gave projecten van de pro's te zien weet ik zeker dat ik development en coderen echt mee wil gaan nemen in mijn loopbaan voor de toekomst, samen met design. De grootste les die ik uit alle weekly nerds heb gehaald is dat je vooral moet doen wat je leuk vind en waar je goed in bent en dat je dan altijd succesvol zal worden op een manier!</p>
                         </section>
                     </li>
                 </ul>
